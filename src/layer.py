@@ -65,9 +65,7 @@ class SendReciveLayer(YowInterfaceLayer):
         }
 
     def aliasToJid(self, calias):
-
-        jid = "%s@s.whatsapp.net" % calias
-        return jid
+        return Jid.normalize(calias)
 
     def jidToAlias(self, jid):
         for alias, ajid in self.jidAliases.items():
